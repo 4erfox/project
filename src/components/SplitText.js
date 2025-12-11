@@ -10,35 +10,35 @@ class SplitText {
     this.to = options.to || { opacity: 1, y: 0 };
     this.startDelay = options.startDelay || 0;
     this.onComplete = options.onLetterAnimationComplete;
-    
+
     this.init();
   }
-  
+
   init() {
     if (!this.element) return;
-    
+
     const text = this.element.textContent;
     this.element.innerHTML = '';
-    
+
     const letters = text.split('').map((char) => {
       const span = document.createElement('span');
       span.className = 'letter';
       span.textContent = char;
       span.style.display = 'inline-block';
-      
+
       if (char === ' ') {
         span.style.width = '0.3em';
       }
-      
+
       Object.assign(span.style, {
         opacity: this.from.opacity,
         transform: `translateY(${this.from.y}px)`,
       });
-      
+
       this.element.appendChild(span);
       return span;
     });
-    
+
     letters.forEach((letter, index) => {
       setTimeout(() => {
         gsap.to(letter, {
@@ -48,7 +48,7 @@ class SplitText {
           ease: this.ease,
           onComplete: () => {
             letter.classList.add('animated');
-            
+
             if (index === letters.length - 1 && this.onComplete) {
               this.onComplete();
             }
