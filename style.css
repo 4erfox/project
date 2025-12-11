@@ -4,23 +4,230 @@
   box-sizing: border-box;
 }
 
+:root {
+  --base: #ffffff;
+  --pill-bg: #060010;
+  --hover-text: #060010;
+  --pill-text: #ffffff;
+  --primary-blue: #4a90e2;
+  --dark-blue: #1e3c72;
+  --light-blue: #2a5298;
+  --gray: #7e8ba3;
+  --light-gray: #e0e7ef;
+  --lighter-gray: #f0f4f8;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 50%, var(--gray) 100%);
   min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pill Navigation */
+.pill-nav-container {
+  background: rgba(20, 30, 50, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.pill-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  position: relative;
+}
+
+.pill-logo {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+}
+
+.pill-logo:hover {
+  transform: scale(1.05);
+}
+
+.pill-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pill-nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.pill-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  color: var(--pill-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 24px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.pill:hover {
+  color: var(--hover-text);
+  transform: translateY(-2px);
+}
+
+.pill.is-active {
+  background: rgba(74, 144, 226, 0.3);
+  color: var(--primary-blue);
+}
+
+.label-stack {
+  position: relative;
+  display: inline-block;
+  height: 1.2em;
+  overflow: hidden;
+}
+
+.pill-label,
+.pill-label-hover {
+  display: block;
+  white-space: nowrap;
+}
+
+.hover-circle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  opacity: 0.2;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+/* Mobile Menu */
+.mobile-menu-button {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  justify-content: center;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background: var(--pill-text);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu-popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(20, 30, 50, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: top center;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--pill-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link.is-active {
+  background: rgba(74, 144, 226, 0.3);
+  color: var(--primary-blue);
+  transform: translateX(4px);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .hero-section {
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 4rem 0;
 }
 
 .greeting-container {
@@ -46,7 +253,7 @@ body {
 .proverb-text {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #f0f4f8;
+  color: var(--lighter-gray);
   margin-bottom: 1rem;
   font-style: italic;
   letter-spacing: 1px;
@@ -55,13 +262,12 @@ body {
 
 .proverb-translation {
   font-size: 1.5rem;
-  color: #e0e7ef;
+  color: var(--light-gray);
   font-weight: 400;
   opacity: 0.9;
   letter-spacing: 0.5px;
 }
 
-/* Анимация для букв */
 .letter {
   display: inline-block;
   opacity: 0;
@@ -74,35 +280,88 @@ body {
   transform: translateY(0);
 }
 
-/* Адаптивность */
+/* Responsive */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .pill-nav {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .pill-list {
+    gap: 0.25rem;
+  }
+
+  .pill {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .app-container {
+    padding: 0 1rem;
+  }
+
   .greeting-title {
     font-size: 2.5rem;
   }
-  
+
   .proverb-text {
     font-size: 1.8rem;
   }
-  
+
   .proverb-translation {
     font-size: 1.2rem;
   }
-  
+
   .greeting-container {
     padding: 3rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .pill-nav {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
   .greeting-title {
     font-size: 2rem;
   }
-  
+
   .proverb-text {
     font-size: 1.4rem;
   }
-  
+
   .proverb-translation {
     font-size: 1rem;
+  }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .mobile-menu-popover.open {
+    visibility: visible;
+    opacity: 1;
   }
 }
