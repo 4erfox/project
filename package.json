@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.38.4"
+    "@gsap/react": "^2.1.2",
+    "@supabase/supabase-js": "^2.38.4",
+    "gsap": "^3.14.1"
   },
   "devDependencies": {
     "vite": "^5.0.0"
