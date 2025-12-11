@@ -7,16 +7,39 @@
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-  <div id="app">
-    <div class="hero-section">
-      <div class="greeting-container">
-        <h1 id="greeting-text" class="greeting-title">Сәлеметсіз бе!</h1>
-        <p id="proverb-text" class="proverb-text">Тіл – жүректің айнасы</p>
-        <p class="proverb-translation">Язык - зеркало души</p>
+
+  <!-- 🔥 Шапка сайта -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-logo">
+        <span class="logo-text">БЭ</span>
+      </div>
+      <nav class="pill-nav">
+        <a href="#" class="nav-link active">Главная</a>
+        <a href="#" class="nav-link">Разделы</a>
+        <a href="#" class="nav-link">Материалы</a>
+        <a href="#" class="nav-link">Контакты</a>
+        <a href="#" class="nav-btn">Начать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <div id="app" class="app-container">
+      <div class="hero-section">
+        <div class="greeting-container">
+          <h1 id="greeting-text" class="greeting-title">Сәлеметсіз бе!</h1>
+          <p id="proverb-text" class="proverb-text">Тіл – жүректің айнасы</p>
+          <p class="proverb-translation">Язык - зеркало души</p>
+        </div>
       </div>
     </div>
-  </div>
+
+  </main>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
