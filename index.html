@@ -4,30 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Деловой этикет в Казахстане</title>
-  <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
+  <nav class="pill-nav-container">
+    <div class="pill-nav">
+      <a href="#" class="pill-logo" aria-label="Home">
+        <img src="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='8' fill='%234a90e2'/%3E%3Ctext x='50%25' y='50%25' dominantBaseline='middle' textAnchor='middle' fontSize='20' fontWeight='700' fill='white' fontFamily='Segoe UI'%3EБЭ%3C/text%3E%3C/svg%3E" alt="БЭ" />
+      </a>
 
-  <!-- 🔥 Шапка сайта -->
-  <header class="site-header">
-    <div class="header-container">
-      <div class="header-logo">
-        <span class="logo-text">БЭ</span>
+      <div class="pill-nav-items desktop-only">
+        <ul class="pill-list" role="menubar">
+          <li role="none">
+            <a role="menuitem" href="#" class="pill is-active" aria-label="Главная">
+              <span class="hover-circle" aria-hidden="true"></span>
+              <span class="label-stack">
+                <span class="pill-label">Главная</span>
+                <span class="pill-label-hover" aria-hidden="true">Главная</span>
+              </span>
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="#" class="pill" aria-label="Разделы">
+              <span class="hover-circle" aria-hidden="true"></span>
+              <span class="label-stack">
+                <span class="pill-label">Разделы</span>
+                <span class="pill-label-hover" aria-hidden="true">Разделы</span>
+              </span>
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="#" class="pill" aria-label="Материалы">
+              <span class="hover-circle" aria-hidden="true"></span>
+              <span class="label-stack">
+                <span class="pill-label">Материалы</span>
+                <span class="pill-label-hover" aria-hidden="true">Материалы</span>
+              </span>
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="#" class="pill" aria-label="Контакты">
+              <span class="hover-circle" aria-hidden="true"></span>
+              <span class="label-stack">
+                <span class="pill-label">Контакты</span>
+                <span class="pill-label-hover" aria-hidden="true">Контакты</span>
+              </span>
+            </a>
+          </li>
+        </ul>
       </div>
-      <nav class="pill-nav">
-        <a href="#" class="nav-link active">Главная</a>
-        <a href="#" class="nav-link">Разделы</a>
-        <a href="#" class="nav-link">Материалы</a>
-        <a href="#" class="nav-link">Контакты</a>
-        <a href="#" class="nav-btn">Начать</a>
-      </nav>
+
+      <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
-  </header>
+
+    <div class="mobile-menu-popover mobile-only">
+      <ul class="mobile-menu-list">
+        <li><a href="#" class="mobile-menu-link is-active">Главная</a></li>
+        <li><a href="#" class="mobile-menu-link">Разделы</a></li>
+        <li><a href="#" class="mobile-menu-link">Материалы</a></li>
+        <li><a href="#" class="mobile-menu-link">Контакты</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main class="main-content">
-
     <div id="app" class="app-container">
       <div class="hero-section">
         <div class="greeting-container">
@@ -37,7 +80,6 @@
         </div>
       </div>
     </div>
-
   </main>
 
   <script type="module" src="/src/main.js"></script>
