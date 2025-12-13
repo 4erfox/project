@@ -25,28 +25,11 @@ body {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('/image.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 50%, var(--gray) 100%);
   min-height: 100vh;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(30, 60, 114, 0.7) 0%, rgba(42, 82, 152, 0.6) 50%, rgba(126, 139, 163, 0.5) 100%);
-  z-index: 0;
-  pointer-events: none;
 }
 
 /* Pill Navigation */
@@ -229,8 +212,6 @@ body::before {
   align-items: center;
   justify-content: center;
   width: 100%;
-  position: relative;
-  z-index: 1;
 }
 
 .app-container {
