@@ -1,33 +1,92 @@
-import { gsap } from 'gsap';
-import SplitText from './components/SplitText.js';
-import { initializePillNav } from './components/PillNav.js';
+import { Navigation, updateActiveLink } from './components/Navigation.js';
+import { Footer } from './components/Footer.js';
+import { home } from './pages/home.js';
+import { lessonsPage } from './pages/lessons.js';
+import { lessonDetailPage } from './pages/lesson-detail.js';
+import { glossaryPage } from './pages/glossary.js';
+import { aboutPage } from './pages/about.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  initializePillNav();
+const routes = [
+  { path: '/', page: 'home' },
+  { path: '/lessons', page: 'lessons' },
+  { path: '/glossary', page: 'glossary' },
+  { path: '/about', page: 'about' }
+];
 
-  const greetingText = document.getElementById('greeting-text');
-  const proverbText = document.getElementById('proverb-text');
-
-  if (greetingText) {
-    new SplitText({
-      element: greetingText,
-      delay: 100,
-      duration: 0.6,
-      ease: 'power3.out',
-      from: { opacity: 0, y: 40 },
-      to: { opacity: 1, y: 0 },
-    });
+class Router {
+  constructor() {
+    this.currentPath = '/';
   }
 
-  if (proverbText) {
-    new SplitText({
-      element: proverbText,
-      delay: 150,
-      duration: 0.8,
-      ease: 'power3.out',
-      from: { opacity: 0, y: 40 },
-      to: { opacity: 1, y: 0 },
-      startDelay: 800,
-    });
+  navigate(path) {
+    this.currentPath = path;
+    window.history.pushState({}, '', path);
+    this.render(path);
   }
+
+  render(path) {
+    updateActiveLink(path);
+    let page;
+
+    if (path.startsWith('/lesson/')) {
+      const lessonId = path.split('/')[2];
+      page = lessonDetailPage(lessonId);
+    } else {
+      switch (path) {
+        case '/':
+          page = home();
+          break;
+        case '/lessons':
+          page = lessonsPage();
+          break;
+        case '/glossary':
+          page = glossaryPage();
+          break;
+        case '/about':
+          page = aboutPage();
+          break;
+        default:
+          page = home();
+      }
+    }
+
+    const appContainer = document.getElementById('app');
+    appContainer.innerHTML = '';
+    appContainer.appendChild(page);
+  }
+}
+
+const router = new Router();
+window.router = router;
+
+function initializeApp() {
+  const app = document.getElementById('app');
+  
+  const navbar = Navigation((path) => {
+    router.navigate(path);
+  });
+
+  const footer = Footer();
+
+  const appWrapper = document.createElement('div');
+  appWrapper.style.cssText = 'display: flex; flex-direction: column; min-height: 100vh;';
+
+  const mainContent = document.createElement('div');
+  mainContent.style.flex = '1';
+
+  appWrapper.appendChild(navbar);
+  appWrapper.appendChild(mainContent);
+  appWrapper.appendChild(footer);
+
+  app.appendChild(appWrapper);
+
+  const contentContainer = appWrapper.querySelector('div:nth-child(2)');
+  contentContainer.innerHTML = '';
+  router.render('/');
+}
+
+window.addEventListener('popstate', () => {
+  router.render(window.location.pathname);
 });
+
+document.addEventListener('DOMContentLoaded', initializeApp);
