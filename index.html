@@ -9,14 +9,14 @@
 <body>
   <nav class="pill-nav-container">
     <div class="pill-nav">
-      <a href="#" class="pill-logo" aria-label="Home">
+      <a href="/" class="pill-logo" aria-label="Home">
         <img src="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='8' fill='%234a90e2'/%3E%3Ctext x='50%25' y='50%25' dominantBaseline='middle' textAnchor='middle' fontSize='20' fontWeight='700' fill='white' fontFamily='Segoe UI'%3EБЭ%3C/text%3E%3C/svg%3E" alt="ДЭ" />
       </a>
 
       <div class="pill-nav-items desktop-only">
         <ul class="pill-list" role="menubar">
           <li role="none">
-            <a role="menuitem" href="#" class="pill is-active" aria-label="Главная">
+            <a role="menuitem" href="/" class="pill is-active" aria-label="Главная">
               <span class="hover-circle" aria-hidden="true"></span>
               <span class="label-stack">
                 <span class="pill-label">Главная</span>
@@ -25,29 +25,29 @@
             </a>
           </li>
           <li role="none">
-            <a role="menuitem" href="#" class="pill" aria-label="Разделы">
+            <a role="menuitem" href="/lessons" class="pill" aria-label="Уроки">
               <span class="hover-circle" aria-hidden="true"></span>
               <span class="label-stack">
-                <span class="pill-label">Разделы</span>
-                <span class="pill-label-hover" aria-hidden="true">Разделы</span>
+                <span class="pill-label">Уроки</span>
+                <span class="pill-label-hover" aria-hidden="true">Уроки</span>
               </span>
             </a>
           </li>
           <li role="none">
-            <a role="menuitem" href="#" class="pill" aria-label="Материалы">
+            <a role="menuitem" href="/glossary" class="pill" aria-label="Глоссарий">
               <span class="hover-circle" aria-hidden="true"></span>
               <span class="label-stack">
-                <span class="pill-label">Материалы</span>
-                <span class="pill-label-hover" aria-hidden="true">Материалы</span>
+                <span class="pill-label">Глоссарий</span>
+                <span class="pill-label-hover" aria-hidden="true">Глоссарий</span>
               </span>
             </a>
           </li>
           <li role="none">
-            <a role="menuitem" href="#" class="pill" aria-label="Контакты">
+            <a role="menuitem" href="/about" class="pill" aria-label="О курсе">
               <span class="hover-circle" aria-hidden="true"></span>
               <span class="label-stack">
-                <span class="pill-label">Контакты</span>
-                <span class="pill-label-hover" aria-hidden="true">Контакты</span>
+                <span class="pill-label">О курсе</span>
+                <span class="pill-label-hover" aria-hidden="true">О курсе</span>
               </span>
             </a>
           </li>
@@ -62,24 +62,16 @@
 
     <div class="mobile-menu-popover mobile-only">
       <ul class="mobile-menu-list">
-        <li><a href="#" class="mobile-menu-link is-active">Главная</a></li>
-        <li><a href="#" class="mobile-menu-link">Разделы</a></li>
-        <li><a href="#" class="mobile-menu-link">Материалы</a></li>
-        <li><a href="#" class="mobile-menu-link">Контакты</a></li>
+        <li><a href="/" class="mobile-menu-link is-active">Главная</a></li>
+        <li><a href="/lessons" class="mobile-menu-link">Уроки</a></li>
+        <li><a href="/glossary" class="mobile-menu-link">Глоссарий</a></li>
+        <li><a href="/about" class="mobile-menu-link">О курсе</a></li>
       </ul>
     </div>
   </nav>
 
   <main class="main-content">
-    <div id="app" class="app-container">
-      <div class="hero-section">
-        <div class="greeting-container">
-          <h1 id="greeting-text" class="greeting-title">Сәлеметсіз бе!</h1>
-          <p id="proverb-text" class="proverb-text">Тіл – жүректің айнасы</p>
-          <p class="proverb-translation">Язык - зеркало души</p>
-        </div>
-      </div>
-    </div>
+    <div id="app" class="app-container"></div>
   </main>
 
   <script type="module" src="/src/main.js"></script>

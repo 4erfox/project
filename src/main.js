@@ -1,17 +1,9 @@
-import { Navigation, updateActiveLink } from './components/Navigation.js';
-import { Footer } from './components/Footer.js';
+import { initializePillNav } from './components/PillNav.js';
 import { home } from './pages/home.js';
 import { lessonsPage } from './pages/lessons.js';
 import { lessonDetailPage } from './pages/lesson-detail.js';
 import { glossaryPage } from './pages/glossary.js';
 import { aboutPage } from './pages/about.js';
-
-const routes = [
-  { path: '/', page: 'home' },
-  { path: '/lessons', page: 'lessons' },
-  { path: '/glossary', page: 'glossary' },
-  { path: '/about', page: 'about' }
-];
 
 class Router {
   constructor() {
@@ -25,7 +17,7 @@ class Router {
   }
 
   render(path) {
-    updateActiveLink(path);
+    this.updateActiveLinks(path);
     let page;
 
     if (path.startsWith('/lesson/')) {
@@ -54,35 +46,36 @@ class Router {
     appContainer.innerHTML = '';
     appContainer.appendChild(page);
   }
+
+  updateActiveLinks(path) {
+    const allLinks = document.querySelectorAll('.pill, .mobile-menu-link');
+    allLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === path || (path.startsWith('/lesson/') && href === '/lessons')) {
+        link.classList.add('is-active');
+      } else {
+        link.classList.remove('is-active');
+      }
+    });
+  }
 }
 
 const router = new Router();
 window.router = router;
 
 function initializeApp() {
-  const app = document.getElementById('app');
-  
-  const navbar = Navigation((path) => {
-    router.navigate(path);
+  initializePillNav();
+
+  const allLinks = document.querySelectorAll('.pill, .mobile-menu-link, .pill-logo');
+  allLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      router.navigate(href);
+    });
   });
 
-  const footer = Footer();
-
-  const appWrapper = document.createElement('div');
-  appWrapper.style.cssText = 'display: flex; flex-direction: column; min-height: 100vh;';
-
-  const mainContent = document.createElement('div');
-  mainContent.style.flex = '1';
-
-  appWrapper.appendChild(navbar);
-  appWrapper.appendChild(mainContent);
-  appWrapper.appendChild(footer);
-
-  app.appendChild(appWrapper);
-
-  const contentContainer = appWrapper.querySelector('div:nth-child(2)');
-  contentContainer.innerHTML = '';
-  router.render('/');
+  router.render(window.location.pathname);
 }
 
 window.addEventListener('popstate', () => {
