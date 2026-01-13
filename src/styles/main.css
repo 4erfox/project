@@ -1,0 +1,25 @@
+@import './variables.css';
+@import './reset.css';
+@import './typography.css';
+@import './layout.css';
+@import './components/navbar.css';
+@import './components/hero.css';
+@import './components/lesson-card.css';
+@import './components/quiz.css';
+@import './components/footer.css';
+
+body {
+  background-color: var(--neutral-200);
+}
+
+main {
+  min-height: calc(100vh - 200px);
+  padding: var(--spacing-2xl) 0;
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

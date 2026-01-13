@@ -1,0 +1,54 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: 32px;
+  color: var(--primary-dark);
+}
+
+h2 {
+  font-size: 28px;
+  color: var(--primary-dark);
+}
+
+h3 {
+  font-size: 24px;
+  color: var(--primary-dark);
+}
+
+h4 {
+  font-size: 20px;
+  color: var(--primary-dark);
+}
+
+h5 {
+  font-size: 18px;
+  color: var(--primary-dark);
+}
+
+h6 {
+  font-size: 16px;
+  color: var(--primary-dark);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--neutral-600);
+  margin-bottom: var(--spacing-md);
+}
+
+small {
+  font-size: 14px;
+}
+
+strong {
+  font-weight: var(--font-weight-semibold);
+}
