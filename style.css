@@ -267,6 +267,11 @@ section h2 {
   color: var(--text-dark);
 }
 
+/* FIRST SECTION AFTER NAVBAR - ADD SPACING */
+#basics {
+  padding-top: 120px;
+}
+
 /* SERVICES */
 .services-section {
   background-color: var(--bg-light);
@@ -546,6 +551,10 @@ section h2 {
     padding: 3rem 1.5rem;
   }
 
+  #basics {
+    padding-top: 100px;
+  }
+
   section h2 {
     font-size: 2rem;
   }
@@ -585,6 +594,10 @@ section h2 {
 
   section h2 {
     font-size: 1.75rem;
+  }
+
+  #basics {
+    padding-top: 80px;
   }
 
   .btn {
