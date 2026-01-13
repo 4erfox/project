@@ -1,33 +1,78 @@
-import { gsap } from 'gsap';
-import SplitText from './components/SplitText.js';
-import { initializePillNav } from './components/PillNav.js';
-
 document.addEventListener('DOMContentLoaded', () => {
-  initializePillNav();
-
-  const greetingText = document.getElementById('greeting-text');
-  const proverbText = document.getElementById('proverb-text');
-
-  if (greetingText) {
-    new SplitText({
-      element: greetingText,
-      delay: 100,
-      duration: 0.6,
-      ease: 'power3.out',
-      from: { opacity: 0, y: 40 },
-      to: { opacity: 1, y: 0 },
-    });
-  }
-
-  if (proverbText) {
-    new SplitText({
-      element: proverbText,
-      delay: 150,
-      duration: 0.8,
-      ease: 'power3.out',
-      from: { opacity: 0, y: 40 },
-      to: { opacity: 1, y: 0 },
-      startDelay: 800,
-    });
-  }
+  initializeNavbar();
+  initializeHamburger();
+  initializeActiveLink();
 });
+
+function initializeNavbar() {
+  const navbar = document.getElementById('navbar');
+  const heroSection = document.getElementById('hero');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) {
+        navbar.classList.add('sticky');
+      } else {
+        navbar.classList.remove('sticky');
+      }
+    },
+    {
+      threshold: 0,
+      rootMargin: '0px 0px -1px 0px'
+    }
+  );
+
+  observer.observe(heroSection);
+}
+
+function initializeHamburger() {
+  const navbarToggle = document.getElementById('navbar-toggle');
+  const navbarMenu = document.getElementById('navbar-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navbarToggle.addEventListener('click', () => {
+    navbarToggle.classList.toggle('active');
+    navbarMenu.classList.toggle('active');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navbarToggle.classList.remove('active');
+      navbarMenu.classList.remove('active');
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navbarToggle.classList.remove('active');
+      navbarMenu.classList.remove('active');
+    }
+  });
+}
+
+function initializeActiveLink() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    },
+    {
+      threshold: 0.3
+    }
+  );
+
+  sections.forEach(section => observer.observe(section));
+}

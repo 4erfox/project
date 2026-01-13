@@ -3,84 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Деловой этикет в Казахстане</title>
+  <title>Businesstr - Деловой этикет в Казахстане</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <nav class="pill-nav-container">
-    <div class="pill-nav">
-      <a href="#" class="pill-logo" aria-label="Home">
-        <img src="data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' rx='8' fill='%234a90e2'/%3E%3Ctext x='50%25' y='50%25' dominantBaseline='middle' textAnchor='middle' fontSize='20' fontWeight='700' fill='white' fontFamily='Segoe UI'%3EБЭ%3C/text%3E%3C/svg%3E" alt="ДЭ" />
-      </a>
-
-      <div class="pill-nav-items desktop-only">
-        <ul class="pill-list" role="menubar">
-          <li role="none">
-            <a role="menuitem" href="#" class="pill is-active" aria-label="Главная">
-              <span class="hover-circle" aria-hidden="true"></span>
-              <span class="label-stack">
-                <span class="pill-label">Главная</span>
-                <span class="pill-label-hover" aria-hidden="true">Главная</span>
-              </span>
-            </a>
-          </li>
-          <li role="none">
-            <a role="menuitem" href="#" class="pill" aria-label="Разделы">
-              <span class="hover-circle" aria-hidden="true"></span>
-              <span class="label-stack">
-                <span class="pill-label">Разделы</span>
-                <span class="pill-label-hover" aria-hidden="true">Разделы</span>
-              </span>
-            </a>
-          </li>
-          <li role="none">
-            <a role="menuitem" href="#" class="pill" aria-label="Материалы">
-              <span class="hover-circle" aria-hidden="true"></span>
-              <span class="label-stack">
-                <span class="pill-label">Материалы</span>
-                <span class="pill-label-hover" aria-hidden="true">Материалы</span>
-              </span>
-            </a>
-          </li>
-          <li role="none">
-            <a role="menuitem" href="#" class="pill" aria-label="Контакты">
-              <span class="hover-circle" aria-hidden="true"></span>
-              <span class="label-stack">
-                <span class="pill-label">Контакты</span>
-                <span class="pill-label-hover" aria-hidden="true">Контакты</span>
-              </span>
-            </a>
-          </li>
-        </ul>
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Деловой этикет</h1>
+      <p class="hero-subtitle">Изучите правила профессионального поведения и культуры деловых отношений в современном деловом мире</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">Products</a>
+        <a href="#services" class="btn btn-outline">Services</a>
       </div>
-
-      <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
     </div>
+  </section>
 
-    <div class="mobile-menu-popover mobile-only">
-      <ul class="mobile-menu-list">
-        <li><a href="#" class="mobile-menu-link is-active">Главная</a></li>
-        <li><a href="#" class="mobile-menu-link">Разделы</a></li>
-        <li><a href="#" class="mobile-menu-link">Материалы</a></li>
-        <li><a href="#" class="mobile-menu-link">Контакты</a></li>
+  <!-- STICKY NAVBAR -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-logo">Businesstr</div>
+
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbar-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#about" class="nav-link">About us</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#clients" class="nav-link">Clients</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <main class="main-content">
-    <div id="app" class="app-container">
-      <div class="hero-section">
-        <div class="greeting-container">
-          <h1 id="greeting-text" class="greeting-title">Приветствую!</h1>
-          <p id="proverb-text" class="proverb-text">Тіл – жүректің айнасы</p>
-          <p class="proverb-translation">Язык - зеркало души</p>
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Основы этикета</h3>
+          <p>Изучите базовые правила поведения в деловой среде и национальные особенности Казахстана.</p>
+        </div>
+        <div class="service-card">
+          <h3>Деловая переписка</h3>
+          <p>Научитесь писать профессиональные письма и документы согласно правилам делового этикета.</p>
+        </div>
+        <div class="service-card">
+          <h3>Деловые переговоры</h3>
+          <p>Освойте навыки эффективного взаимодействия в переговорах и деловых встречах.</p>
         </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>О нас</h2>
+      <p>Мы специализируемся на обучении правилам делового этикета с учётом казахской культуры и международных стандартов. Наша миссия - помочь профессионалам развивать навыки деловой коммуникации.</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <h2>Портфолио</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">Корпоративные курсы</div>
+        <div class="portfolio-item">Индивидуальное обучение</div>
+        <div class="portfolio-item">Семинары и воркшопы</div>
+        <div class="portfolio-item">Подготовка к переговорам</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS SECTION -->
+  <section id="clients" class="clients-section">
+    <div class="container">
+      <h2>Наши клиенты</h2>
+      <div class="clients-grid">
+        <div class="client-item">Google</div>
+        <div class="client-item">Microsoft</div>
+        <div class="client-item">Kaspi.kz</div>
+        <div class="client-item">Halyk Bank</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <h2>Тарифы</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Базовый</h3>
+          <p class="price">₸15,000<span>/месяц</span></p>
+          <ul>
+            <li>✓ 10 часов обучения</li>
+            <li>✓ Доступ к материалам</li>
+            <li>✗ Личный консультант</li>
+          </ul>
+          <button class="btn btn-primary">Выбрать</button>
+        </div>
+        <div class="pricing-card featured">
+          <div class="badge">Популярный</div>
+          <h3>Профессиональный</h3>
+          <p class="price">₸35,000<span>/месяц</span></p>
+          <ul>
+            <li>✓ 30 часов обучения</li>
+            <li>✓ Доступ к материалам</li>
+            <li>✓ Личный консультант</li>
+          </ul>
+          <button class="btn btn-primary">Выбрать</button>
+        </div>
+        <div class="pricing-card">
+          <h3>Корпоративный</h3>
+          <p class="price">По запросу</p>
+          <ul>
+            <li>✓ Неограниченные часы</li>
+            <li>✓ Адаптация под компанию</li>
+            <li>✓ Выделенный тренер</li>
+          </ul>
+          <button class="btn btn-outline">Узнать</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p>Свяжитесь с нами для получения дополнительной информации</p>
+      <p>Email: info@businesstr.kz | Телефон: +7 (701) 123-45-67</p>
+    </div>
+  </section>
 
   <script type="module" src="/src/main.js"></script>
 </body>
