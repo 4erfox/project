@@ -5,18 +5,13 @@
 }
 
 :root {
-  --primary-dark-blue: #1e3a8a;
-  --primary-blue: #1e40af;
-  --accent-gold: #d4af37;
-  --accent-gold-light: #fbbf24;
-  --light-blue: #3b82f6;
-  --text-dark: #1e293b;
-  --text-white: #ffffff;
-  --bg-white: #ffffff;
-  --bg-cream: #faf8f3;
-  --bg-light-gray: #f8f9fa;
+  --primary-coral: #E74C3C;
+  --primary-dark: #C0392B;
+  --text-white: #FFFFFF;
+  --text-light: #ECF0F1;
+  --text-dark: #2C3E50;
+  --bg-light: #F8F9FA;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.2);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -25,11 +20,10 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: var(--bg-white);
 }
 
 .container {
@@ -48,7 +42,7 @@ body {
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-blue) 100%);
+  background: #000 url('/image\ copy.png') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -57,7 +51,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(30, 64, 175, 0.85) 100%);
   z-index: 1;
 }
 
@@ -73,22 +66,16 @@ body {
   font-size: 4.5rem;
   font-weight: 800;
   color: var(--text-white);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.hero-title-accent {
-  color: var(--accent-gold-light);
-  display: block;
-}
-
 .hero-subtitle {
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2.5rem;
   line-height: 1.8;
-  font-weight: 300;
 }
 
 .hero-buttons {
@@ -117,22 +104,17 @@ body {
   letter-spacing: 0.5px;
 }
 
-.btn:active {
-  transform: translateY(-1px);
-}
-
 .btn-primary {
-  background-color: var(--accent-gold);
-  color: var(--primary-dark-blue);
-  border-color: var(--accent-gold);
-  font-weight: 700;
+  background-color: var(--primary-coral);
+  color: var(--text-white);
+  border-color: var(--primary-coral);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-gold-light);
-  border-color: var(--accent-gold-light);
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
 }
 
 .btn-outline {
@@ -155,17 +137,16 @@ body {
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: var(--primary-dark-blue);
+  background-color: var(--primary-coral);
   padding: 1.5rem 0;
   transition: var(--transition);
   width: 100%;
-  border-bottom: 2px solid var(--accent-gold);
 }
 
 .navbar.sticky {
   position: fixed;
   top: 0;
-  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+  box-shadow: var(--shadow);
   animation: slideDown 0.4s ease;
 }
 
@@ -227,8 +208,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  background-color: transparent;
-  color: var(--accent-gold-light);
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
 
@@ -239,7 +219,7 @@ body {
   left: 1.25rem;
   right: 1.25rem;
   height: 2px;
-  background-color: var(--accent-gold);
+  background-color: var(--text-white);
   border-radius: 1px;
 }
 
@@ -284,21 +264,12 @@ section h2 {
   font-weight: 800;
   margin-bottom: 2rem;
   text-align: center;
-  color: var(--primary-dark-blue);
-}
-
-section h2::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 3px;
-  background-color: var(--accent-gold);
-  margin: 1rem auto 0;
+  color: var(--text-dark);
 }
 
 /* SERVICES */
 .services-section {
-  background-color: var(--bg-cream);
+  background-color: var(--bg-light);
 }
 
 .services-grid {
@@ -313,19 +284,18 @@ section h2::after {
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: var(--transition);
-  border-top: 3px solid var(--accent-gold);
+  border-left: 4px solid var(--primary-coral);
 }
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 .service-card h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: var(--primary-dark-blue);
-  font-weight: 700;
+  color: var(--text-dark);
 }
 
 .service-card p {
@@ -336,15 +306,7 @@ section h2::after {
 
 /* ABOUT */
 .about-section {
-  background-color: var(--bg-white);
-}
-
-.about-section h2 {
-  color: var(--primary-dark-blue);
-}
-
-.about-section h2::after {
-  background-color: var(--accent-gold);
+  background-color: var(--text-white);
 }
 
 .about-section p {
@@ -358,7 +320,7 @@ section h2::after {
 
 /* PORTFOLIO */
 .portfolio-section {
-  background-color: var(--bg-white);
+  background-color: var(--bg-light);
 }
 
 .portfolio-grid {
@@ -368,37 +330,31 @@ section h2::after {
 }
 
 .portfolio-item {
-  background: linear-gradient(135deg, var(--bg-cream) 0%, #fef6e4 100%);
+  background: var(--text-white);
   padding: 2rem;
   border-radius: 0.75rem;
   text-align: center;
   font-weight: 600;
-  color: var(--primary-dark-blue);
+  color: var(--text-dark);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: var(--transition);
   cursor: pointer;
-  border: 2px solid transparent;
 }
 
 .portfolio-item:hover {
-  background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-blue) 100%);
-  color: var(--accent-gold-light);
+  background-color: var(--primary-coral);
+  color: var(--text-white);
   transform: translateY(-4px);
-  border-color: var(--accent-gold);
 }
 
 /* CLIENTS */
 .clients-section {
-  background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-blue) 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: var(--text-white);
 }
 
 .clients-section h2 {
   color: var(--text-white);
-}
-
-.clients-section h2::after {
-  background-color: var(--accent-gold-light);
 }
 
 .clients-grid {
@@ -425,7 +381,7 @@ section h2::after {
 
 /* PRICING */
 .pricing-section {
-  background-color: var(--bg-cream);
+  background-color: var(--bg-light);
 }
 
 .pricing-grid {
@@ -447,22 +403,22 @@ section h2::after {
 }
 
 .pricing-card.featured {
-  border-color: var(--accent-gold);
+  border-color: var(--primary-coral);
   transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 12px 24px rgba(231, 76, 60, 0.15);
 }
 
 .pricing-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 .badge {
   position: absolute;
   top: -12px;
   left: 2rem;
-  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
-  color: var(--primary-dark-blue);
+  background-color: var(--primary-coral);
+  color: var(--text-white);
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
   font-size: 0.75rem;
@@ -473,14 +429,13 @@ section h2::after {
 .pricing-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: var(--primary-dark-blue);
-  font-weight: 700;
+  color: var(--text-dark);
 }
 
 .price {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--accent-gold);
+  color: var(--primary-coral);
   margin-bottom: 1.5rem;
 }
 
@@ -513,7 +468,7 @@ section h2::after {
 
 /* CONTACT */
 .contact-section {
-  background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-blue) 100%);
+  background-color: var(--text-dark);
   color: var(--text-white);
   text-align: center;
 }
@@ -522,12 +477,8 @@ section h2::after {
   color: var(--text-white);
 }
 
-.contact-section h2::after {
-  background-color: var(--accent-gold-light);
-}
-
 .contact-section p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
@@ -564,7 +515,7 @@ section h2::after {
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: var(--primary-dark-blue);
+    background-color: var(--primary-coral);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
