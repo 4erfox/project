@@ -747,14 +747,15 @@ section h2 {
 /* CONTACT SECTION */
 .contact-section {
   position: relative;
-  background: #000 url('/image\ copy\ copy\ copy\ copy.png') center/cover no-repeat;
+  background: #000 url('/image\ copy\ copy\ copy\ copy\ copy.png') center/cover no-repeat;
   padding: 0;
   margin: 0;
 }
 
 .contact-overlay {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.75);
   padding: 5rem 2rem;
+  backdrop-filter: blur(2px);
 }
 
 .contact-content-wrapper {
