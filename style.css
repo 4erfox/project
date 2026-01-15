@@ -594,6 +594,156 @@ section h2 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* EDUCATIONAL SECTION */
+.educational-section {
+  background: white;
+  padding: 5rem 2rem;
+}
+
+.educational-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.section-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: center;
+  font-style: italic;
+}
+
+.lecture-blocks {
+  display: grid;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.lecture-block {
+  background: var(--bg-light);
+  padding: 3rem;
+  border-radius: 1rem;
+  border-left: 6px solid var(--primary-coral);
+  transition: var(--transition);
+}
+
+.lecture-block:hover {
+  box-shadow: 0 8px 24px rgba(231, 76, 60, 0.12);
+  transform: translateX(5px);
+}
+
+.lecture-block h3 {
+  font-size: 1.75rem;
+  color: var(--primary-coral);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.lecture-block h4 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.lecture-block h4:first-of-type {
+  margin-top: 0;
+}
+
+.lecture-block p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.lecture-block ul {
+  list-style: none;
+  margin: 1rem 0 1rem 0;
+  padding-left: 0;
+}
+
+.lecture-block li {
+  color: #555;
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.lecture-block li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-coral);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.lecture-highlight {
+  background: rgba(231, 76, 60, 0.08);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--primary-coral);
+}
+
+.lecture-highlight p {
+  margin: 0;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.lecture-example {
+  background: white;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+  font-style: italic;
+  color: #666;
+}
+
+.lecture-example strong {
+  color: var(--primary-coral);
+  font-style: normal;
+}
+
+.conclusion-block {
+  background: linear-gradient(135deg, var(--primary-coral) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(231, 76, 60, 0.25);
+  margin-top: 4rem;
+}
+
+.conclusion-block h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.conclusion-block p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.conclusion-block .btn {
+  margin: 0 0.75rem;
+}
+
 /* FOOTER */
 .footer {
   background-color: var(--text-dark);
@@ -790,6 +940,47 @@ section h2 {
 
   .cta-block p {
     font-size: 1rem;
+  }
+
+  .educational-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .educational-section h2 {
+    font-size: 2rem;
+  }
+
+  .section-intro {
+    font-size: 1rem;
+  }
+
+  .lecture-block {
+    padding: 2rem;
+  }
+
+  .lecture-block h3 {
+    font-size: 1.5rem;
+  }
+
+  .lecture-highlight {
+    padding: 1rem;
+  }
+
+  .conclusion-block {
+    padding: 2rem 1.5rem;
+  }
+
+  .conclusion-block h3 {
+    font-size: 1.5rem;
+  }
+
+  .conclusion-block p {
+    font-size: 1rem;
+  }
+
+  .conclusion-block .btn {
+    display: block;
+    margin: 0.75rem 0;
   }
 }
 
