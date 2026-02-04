@@ -747,7 +747,7 @@ section h2 {
 /* CONTACT SECTION */
 .contact-section {
   position: relative;
-  background: #000 url('/image\ copy\ copy\ copy\ copy\ copy.png') center/cover no-repeat;
+  background: #000 url('/image%20copy%20copy%20copy%20copy%20copy.png') center/cover no-repeat;
   padding: 0;
   margin: 0;
 }
@@ -756,6 +756,9 @@ section h2 {
   background: rgba(0, 0, 0, 0.75);
   padding: 5rem 2rem;
   backdrop-filter: blur(2px);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .contact-content-wrapper {
@@ -764,6 +767,7 @@ section h2 {
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .contact-info-block {
@@ -1067,6 +1071,7 @@ section h2 {
 
   .contact-overlay {
     padding: 3rem 1.5rem;
+    min-height: auto;
   }
 
   .contact-content-wrapper {
