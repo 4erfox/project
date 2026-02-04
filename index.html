@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ЭтикетPro - Деловой этикет в Казахстане</title>
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/src/authStyles.css">
 </head>
 <body>
   <!-- NAVBAR -->
@@ -27,6 +28,7 @@
         <li><a href="kultura.html" class="nav-link">Культура</a></li>
         <li><a href="praktika.html" class="nav-link">Практика</a></li>
         <li><a href="kontakty.html" class="nav-link">Контакты</a></li>
+        <li><button id="auth-btn" class="auth-btn-navbar">Вход</button></li>
       </ul>
     </div>
   </nav>
@@ -322,6 +324,22 @@
   </section>
 
   <script type="module" src="/src/main.js"></script>
+  <script type="module">
+    import { openAuthModal, createUserMenu } from '/src/authModal.js';
+    import { initAuth } from '/src/auth.js';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await initAuth();
+      createUserMenu();
+
+      const authBtn = document.getElementById('auth-btn');
+      if (authBtn) {
+        authBtn.addEventListener('click', () => {
+          openAuthModal();
+        });
+      }
+    });
+  </script>
   <script>
     document.getElementById('contactFormHome')?.addEventListener('submit', function(e) {
       e.preventDefault();

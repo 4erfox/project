@@ -1,10 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
+import { initAuth } from './auth.js';
+import { openAuthModal, createUserMenu } from './authModal.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
   initializeNavbar();
   initializeHamburger();
   initializeActiveLink();
   initializeTimelineParallax();
   initializeTimelineScroll();
+  initializeAuth();
 });
+
+async function initializeAuth() {
+  await initAuth();
+  createUserMenu();
+
+  const authBtn = document.getElementById('auth-btn');
+  if (authBtn) {
+    authBtn.addEventListener('click', () => {
+      openAuthModal();
+    });
+  }
+}
 
 function initializeNavbar() {
   const navbar = document.getElementById('navbar');
