@@ -18,7 +18,16 @@ class MobileNavBar {
    */
   getCurrentActiveItem() {
     const currentPath = window.location.pathname;
-    const activeNav = NAV_ITEMS.find(item => item.path === currentPath);
+
+    // Нормализуем путь (получаем только имя файла)
+    const currentFile = currentPath.split('/').pop() || 'index.html';
+
+    // Ищем соответствующий элемент навигации
+    const activeNav = NAV_ITEMS.find(item => {
+      const itemFile = item.path.split('/').pop();
+      return itemFile === currentFile || item.path === currentPath;
+    });
+
     return activeNav ? activeNav.id : 'home';
   }
 
@@ -240,8 +249,12 @@ class MobileNavBar {
     // Обновляем визуальное состояние всех кнопок
     this.updateActiveState();
 
-    // Выполняем навигацию
-    if (navPath !== window.location.pathname) {
+    // Получаем текущий путь и путь назначения
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    const targetFile = navPath.split('/').pop();
+
+    // Выполняем навигацию только если пути разные
+    if (currentFile !== targetFile) {
       window.location.href = navPath;
     }
   }

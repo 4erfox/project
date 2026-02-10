@@ -28,6 +28,9 @@ function initializeHamburger() {
   const navbarMenu = document.getElementById('navbar-menu');
   const navLinks = document.querySelectorAll('.nav-link');
 
+  // Проверяем существование элементов
+  if (!navbarToggle || !navbarMenu) return;
+
   navbarToggle.addEventListener('click', () => {
     navbarToggle.classList.toggle('active');
     navbarMenu.classList.toggle('active');
@@ -51,6 +54,9 @@ function initializeHamburger() {
 function initializeActiveLink() {
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
+
+  // Проверяем наличие секций и ссылок
+  if (sections.length === 0 || navLinks.length === 0) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -77,6 +83,9 @@ function initializeActiveLink() {
 
 function initializeTimelineParallax() {
   const timelineItems = document.querySelectorAll('.timeline-item');
+
+  // Проверяем наличие элементов
+  if (timelineItems.length === 0) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
