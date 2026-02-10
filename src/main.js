@@ -1,3 +1,6 @@
+// Импорт мобильного навбара
+import '../js/MobileNavBar.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   initializeNavbar();
   initializeHamburger();
