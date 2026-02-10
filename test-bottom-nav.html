@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест универсального нижнего навбара</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .test-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      padding-bottom: 120px;
+    }
+
+    .test-section {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .test-section h2 {
+      color: #E53935;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .test-section p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .test-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .test-section li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #555;
+    }
+
+    .test-section li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .status-success {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .status-info {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .navbar {
+      display: none;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #E53935 0%, #C62828 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .demo-card {
+      background: #f9fafb;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #E53935;
+    }
+
+    .demo-card h3 {
+      color: #E53935;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-card p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .scroll-indicator {
+      text-align: center;
+      padding: 2rem;
+      background: #fef3c7;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .scroll-indicator p {
+      color: #92400e;
+      font-weight: 600;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="test-container">
+
+    <div class="hero">
+      <h1>Универсальный нижний навбар</h1>
+      <p>Отображается на всех устройствах - desktop и mobile</p>
+    </div>
+
+    <div class="scroll-indicator">
+      <p>👇 Прокрутите страницу вниз, чтобы увидеть навбар внизу экрана 👇</p>
+    </div>
+
+    <div class="test-section">
+      <h2>Статус компонента <span class="status-badge status-success">Активен</span></h2>
+      <p>Универсальный нижний навбар загружен и работает на всех устройствах.</p>
+      <ul>
+        <li>Отображается на desktop (> 768px)</li>
+        <li>Отображается на mobile (≤ 768px)</li>
+        <li>Фиксированная позиция внизу экрана</li>
+        <li>5 элементов навигации (4 обычных + 1 логотип)</li>
+        <li>Центральная иконка поднята вверх</li>
+        <li>Badge на кнопке Daily</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h2>Элементы навигации</h2>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <h3>🏠 Главная</h3>
+          <p>Переход на главную страницу</p>
+        </div>
+        <div class="demo-card">
+          <h3>📚 Курс</h3>
+          <p>Разделы обучения</p>
+        </div>
+        <div class="demo-card">
+          <h3>🎯 ЛОГОТИП</h3>
+          <p>Центральная иконка (поднята)</p>
+        </div>
+        <div class="demo-card">
+          <h3>🎲 Daily</h3>
+          <p>Ежедневная практика (с badge)</p>
+        </div>
+        <div class="demo-card">
+          <h3>📊 Прогресс</h3>
+          <p>Статистика обучения</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>Ключевые особенности</h2>
+      <ul>
+        <li>Темный полупрозрачный фон с blur эффектом</li>
+        <li>Плавные анимации при hover и клике</li>
+        <li>Красный цвет (#E53935) для активных элементов</li>
+        <li>Центральная иконка 56x56px с градиентом</li>
+        <li>Обычные иконки 24x24px</li>
+        <li>Красная пульсирующая точка для Daily</li>
+        <li>Адаптивный дизайн для разных экранов</li>
+        <li>Safe area для iOS устройств</li>
+        <li>Accessibility support (aria-labels, keyboard nav)</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h2>Тестирование <span class="status-badge status-info">Интерактивно</span></h2>
+      <p>Попробуйте следующие действия:</p>
+      <ul>
+        <li>Наведите курсор на иконки (должны увеличиться)</li>
+        <li>Нажмите на любую иконку (переход на страницу)</li>
+        <li>Обратите внимание на красную точку у Daily</li>
+        <li>Центральная иконка поднята выше остальных</li>
+        <li>Активная страница отмечена красным цветом</li>
+        <li>Измените размер окна (responsive)</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h2>Адаптивность</h2>
+      <p><strong>Desktop (> 768px):</strong></p>
+      <ul>
+        <li>Навбар центрирован, max-width: 600px</li>
+        <li>Закругленные верхние углы</li>
+        <li>Увеличенный padding</li>
+      </ul>
+      <p style="margin-top: 1rem;"><strong>Mobile (≤ 768px):</strong></p>
+      <ul>
+        <li>Полная ширина экрана</li>
+        <li>Без закругления углов</li>
+        <li>Меньший padding</li>
+        <li>Логотип 52x52px</li>
+      </ul>
+      <p style="margin-top: 1rem;"><strong>Extra Small (≤ 380px):</strong></p>
+      <ul>
+        <li>Уменьшенные иконки: 20x20px</li>
+        <li>Логотип 48x48px</li>
+        <li>Минимальный padding</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h2>Технические детали</h2>
+      <p><strong>Файлы:</strong></p>
+      <ul>
+        <li>/js/BottomNavBar.js - основной компонент</li>
+        <li>/src/main.js - импорт и инициализация</li>
+        <li>Встроенные стили в компоненте</li>
+      </ul>
+      <p style="margin-top: 1rem;"><strong>Зависимости:</strong></p>
+      <ul>
+        <li>Нет внешних зависимостей</li>
+        <li>Чистый JavaScript (ES6+)</li>
+        <li>CSS3 с современными фичами</li>
+        <li>SVG иконки (Lucide Icons)</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h2>Дальнейшие шаги</h2>
+      <ul>
+        <li>Проверьте навбар на разных устройствах</li>
+        <li>Протестируйте навигацию между страницами</li>
+        <li>Убедитесь, что активное состояние работает</li>
+        <li>Проверьте badge на кнопке Daily</li>
+        <li>Оцените производительность анимаций</li>
+      </ul>
+    </div>
+
+    <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #f9fafb; border-radius: 12px;">
+      <div style="text-align: center; color: #666;">
+        <p style="font-size: 3rem; margin-bottom: 1rem;">🎉</p>
+        <p style="font-size: 1.5rem; font-weight: 600; color: #E53935;">Навбар работает!</p>
+        <p style="margin-top: 0.5rem;">Прокрутите вниз, чтобы увидеть его в действии</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

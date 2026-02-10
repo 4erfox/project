@@ -1,5 +1,5 @@
-// Импорт мобильного навбара
-import '../js/MobileNavBar.js';
+// Импорт универсального нижнего навбара
+import '../js/BottomNavBar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initializeNavbar();

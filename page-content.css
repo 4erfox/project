@@ -14,7 +14,8 @@
 /* Page content container */
 .page-content {
   padding-top: 100px;
-  min-height: calc(100vh - 150px);
+  padding-bottom: 88px;
+  min-height: calc(100vh - 188px);
   background-color: var(--bg-light);
 }
 
