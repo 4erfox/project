@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeTimelineParallax();
   initializeTimelineScroll();
   initializeFooterForm();
+  initializeSidebarMenu();
 });
 
 function initializeNavbar() {
@@ -148,5 +149,53 @@ function initializeFooterForm() {
     const email = formData.get('email');
     alert(`Спасибо за ваше сообщение, ${name}! Мы свяжемся с вами по адресу ${email} в ближайшее время.`);
     footerForm.reset();
+  });
+}
+
+function initializeSidebarMenu() {
+  const courseMenuBtn = document.getElementById('course-menu-btn');
+  const sidebarMenu = document.getElementById('sidebar-menu');
+  const sidebarClose = document.getElementById('sidebar-close');
+  const sidebarOverlay = document.getElementById('sidebar-overlay');
+  const sectionToggles = document.querySelectorAll('.sidebar-section-toggle');
+
+  if (!courseMenuBtn || !sidebarMenu || !sidebarClose || !sidebarOverlay) return;
+
+  function openSidebar() {
+    sidebarMenu.classList.add('active');
+    sidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    sidebarMenu.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  courseMenuBtn.addEventListener('click', openSidebar);
+  sidebarClose.addEventListener('click', closeSidebar);
+  sidebarOverlay.addEventListener('click', closeSidebar);
+
+  sectionToggles.forEach(toggle => {
+    const sectionId = toggle.getAttribute('data-section');
+    const subsection = document.getElementById(sectionId);
+
+    if (subsection) {
+      subsection.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+
+      toggle.addEventListener('click', () => {
+        const isActive = subsection.classList.contains('active');
+        subsection.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', !isActive);
+      });
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024) {
+      closeSidebar();
+    }
   });
 }

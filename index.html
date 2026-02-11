@@ -28,8 +28,134 @@
         <li><a href="praktika.html" class="nav-link">Практика</a></li>
         <li><a href="kontakty.html" class="nav-link">Контакты</a></li>
       </ul>
+
+      <button class="course-menu-btn" id="course-menu-btn" aria-label="Open course menu">
+        <span class="course-icon">📚</span>
+        Курс
+      </button>
     </div>
   </nav>
+
+  <!-- SIDEBAR MENU -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <aside class="sidebar-menu" id="sidebar-menu">
+    <div class="sidebar-header">
+      <h2>Содержание учебника</h2>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">✕</button>
+    </div>
+
+    <nav class="sidebar-content">
+      <!-- Section 1: Основы -->
+      <div class="sidebar-section">
+        <button class="sidebar-section-toggle" data-section="basics">
+          <span class="section-title">Основы делового этикета</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="basics">
+          <li><a href="#" class="sidebar-link">Понятие и значение делового этикета</a></li>
+          <li><a href="#" class="sidebar-link">История развития в Казахстане</a></li>
+          <li><a href="#" class="sidebar-link">Принципы профессионального поведения</a></li>
+          <li><a href="#" class="sidebar-link">Культурные особенности казахстанского бизнеса</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 2: Коммуникация -->
+      <div class="sidebar-section">
+        <button class="sidebar-section-toggle" data-section="communication">
+          <span class="section-title">Деловая коммуникация</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="communication">
+          <li><a href="#" class="sidebar-link">Правила деловой переписки (email, мессенджеры)</a></li>
+          <li><a href="#" class="sidebar-link">Телефонный этикет</a></li>
+          <li><a href="#" class="sidebar-link">Официальные обращения и титулы</a></li>
+          <li><a href="#" class="sidebar-link">Невербальное общение</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 3: Встречи и переговоры -->
+      <div class="sidebar-section">
+        <button class="sidebar-section-toggle" data-section="negotiations">
+          <span class="section-title">Деловые встречи и переговоры</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="negotiations">
+          <li><a href="#" class="sidebar-link">Подготовка к встрече</a></li>
+          <li><a href="#" class="sidebar-link">Правила приветствия и представления</a></li>
+          <li><a href="#" class="sidebar-link">Ведение деловых переговоров</a></li>
+          <li><a href="#" class="sidebar-link">Обмен визитными карточками</a></li>
+          <li><a href="#" class="sidebar-link">Протокол деловых встреч</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 4: Дресс-код -->
+      <div class="sidebar-section">
+        <button class="sidebar-section-toggle" data-section="dresscode">
+          <span class="section-title">Дресс-код и внешний вид</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="dresscode">
+          <li><a href="#" class="sidebar-link">Виды дресс-кода в казахстанских компаниях</a></li>
+          <li><a href="#" class="sidebar-link">Деловой стиль для мужчин</a></li>
+          <li><a href="#" class="sidebar-link">Деловой стиль для женщин</a></li>
+          <li><a href="#" class="sidebar-link">Аксессуары и детали образа</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 5: Корпоративная культура -->
+      <div class="sidebar-section">
+        <button class="sidebar-section-toggle" data-section="culture">
+          <span class="section-title">Корпоративная культура</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="culture">
+          <li><a href="#" class="sidebar-link">Рабочее место и организация пространства</a></li>
+          <li><a href="#" class="sidebar-link">Пунктуальность и тайм-менеджмент</a></li>
+          <li><a href="#" class="sidebar-link">Субординация и иерархия</a></li>
+          <li><a href="#" class="sidebar-link">Корпоративные мероприятия</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 6: Гостеприимство -->
+      <div class="sidebar-section">
+        <button class="sidebar-section-toggle" data-section="hospitality">
+          <span class="section-title">Деловое гостеприимство</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="hospitality">
+          <li><a href="#" class="sidebar-link">Организация деловых приемов</a></li>
+          <li><a href="#" class="sidebar-link">Ресторанный этикет</a></li>
+          <li><a href="#" class="sidebar-link">Деловые подарки и сувениры</a></li>
+          <li><a href="#" class="sidebar-link">Особенности казахского гостеприимства</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 7: Справочник - Глоссарий -->
+      <div class="sidebar-section sidebar-reference">
+        <button class="sidebar-section-toggle" data-section="glossary">
+          <span class="section-title">Справочник - Глоссарий</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="glossary">
+          <li><a href="#" class="sidebar-link">Термины делового этикета</a></li>
+          <li><a href="#" class="sidebar-link">Казахские деловые термины</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 8: Справочник - Ресурсы -->
+      <div class="sidebar-section">
+        <button class="sidebar-section-toggle" data-section="resources">
+          <span class="section-title">Справочник - Полезные ресурсы</span>
+          <span class="toggle-icon">▼</span>
+        </button>
+        <ul class="sidebar-subsection" id="resources">
+          <li><a href="#" class="sidebar-link">Рекомендуемая литература</a></li>
+          <li><a href="#" class="sidebar-link">Онлайн-курсы</a></li>
+          <li><a href="#" class="sidebar-link">Контакты экспертов</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
 
   <!-- HERO SECTION -->
   <section id="hero" class="hero-section">
