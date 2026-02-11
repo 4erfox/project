@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeActiveLink();
   initializeTimelineParallax();
   initializeTimelineScroll();
+  initializeFooterForm();
 });
 
 function initializeNavbar() {
@@ -132,5 +133,20 @@ function initializeTimelineScroll() {
       const progress = Math.min(100, Math.max(0, scrollPercentage * 100));
       progressBar.style.width = progress + '%';
     }
+  });
+}
+
+function initializeFooterForm() {
+  const footerForm = document.getElementById('footerContactForm');
+
+  if (!footerForm) return;
+
+  footerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(footerForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    alert(`Спасибо за ваше сообщение, ${name}! Мы свяжемся с вами по адресу ${email} в ближайшее время.`);
+    footerForm.reset();
   });
 }

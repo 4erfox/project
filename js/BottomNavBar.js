@@ -12,10 +12,10 @@ const NAV_CONFIG = {
       path: '/index.html'
     },
     {
-      id: 'course',
-      label: 'Курс',
+      id: 'contents',
+      label: 'Содержание',
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
-      path: '/osnovyi.html'
+      path: '/index.html#chapters'
     },
     {
       id: 'logo',
@@ -25,17 +25,16 @@ const NAV_CONFIG = {
       path: '/index.html'
     },
     {
-      id: 'daily',
-      label: 'Daily',
+      id: 'practice',
+      label: 'Практика',
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg>`,
-      path: '/praktika.html',
-      showBadge: true
+      path: '/index.html#chapters'
     },
     {
-      id: 'progress',
-      label: 'Прогресс',
+      id: 'contact',
+      label: 'Контакты',
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>`,
-      path: '/kontakty.html'
+      path: '/index.html#footer'
     }
   ]
 };
@@ -48,10 +47,16 @@ class BottomNavBar {
 
   getCurrentActiveItem() {
     const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
     const currentFile = currentPath.split('/').pop() || 'index.html';
 
     const activeNav = NAV_CONFIG.items.find(item => {
       if (item.type === 'logo') return false;
+
+      if (currentHash) {
+        return item.path === currentPath + currentHash || item.path.includes(currentHash);
+      }
+
       const itemFile = item.path.split('/').pop();
       return itemFile === currentFile || item.path === currentPath;
     });
