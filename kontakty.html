@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты - ЭтикетPro</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/page-content.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-fixed">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">ЭтикетPro</a>
+
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="navbar-menu" id="navbar-menu">
+        <li><a href="index.html" class="nav-link">Главная</a></li>
+        <li><a href="osnovyi.html" class="nav-link">Основы</a></li>
+        <li><a href="kommunikatsiya.html" class="nav-link">Коммуникация</a></li>
+        <li><a href="peregovory.html" class="nav-link">Переговоры</a></li>
+        <li><a href="dresscode.html" class="nav-link">Дресс-код</a></li>
+        <li><a href="kultura.html" class="nav-link">Культура</a></li>
+        <li><a href="praktika.html" class="nav-link">Практика</a></li>
+        <li><a href="kontakty.html" class="nav-link active">Контакты</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="index.html">Главная</a> > <span>Контакты</span>
+      </nav>
+
+      <!-- Page title -->
+      <h1 class="page-title">Свяжитесь с нами</h1>
+
+      <!-- Intro -->
+      <div class="intro-section">
+        <p>Есть вопросы о курсе делового этикета? Нужна консультация или помощь? Мы готовы ответить на все ваши вопросы и помочь в освоении профессионального поведения. Заполните форму ниже или свяжитесь с нами удобным способом.</p>
+      </div>
+
+      <!-- Contact info grid -->
+      <div class="topics-grid">
+
+        <div class="topic-card">
+          <div class="topic-icon">📧</div>
+          <h3>Email</h3>
+          <p>info@etiketpro.kz</p>
+          <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">Ответим в течение 24 часов</p>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">📞</div>
+          <h3>Телефон</h3>
+          <p>+7 (701) 123-45-67</p>
+          <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">Пн-Пт: 9:00 - 18:00</p>
+        </div>
+
+        <div class="topic-card">
+          <div class="topic-icon">📍</div>
+          <h3>Адрес</h3>
+          <p>г. Алматы, ул. Абая 150/230</p>
+          <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">БЦ "Nurly Tau", офис 505</p>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text-dark);">Напишите нам</h2>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (700) 123-45-67">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Тема сообщения</label>
+            <input type="text" id="subject" name="subject" required placeholder="Вопрос о курсе">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" required placeholder="Расскажите подробнее о вашем вопросе..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Отправить сообщение</button>
+        </form>
+      </div>
+
+      <!-- Additional info -->
+      <div style="margin-top: 4rem; padding: 2rem; background: white; border-radius: 0.75rem; text-align: center;">
+        <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Социальные сети</h3>
+        <p style="color: #666; margin-bottom: 1.5rem;">Следите за нашими новостями и получайте полезные советы</p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+          <a href="#" style="color: var(--primary-coral); font-size: 1.1rem; text-decoration: none; font-weight: 600;">Instagram</a>
+          <a href="#" style="color: var(--primary-coral); font-size: 1.1rem; text-decoration: none; font-weight: 600;">Facebook</a>
+          <a href="#" style="color: var(--primary-coral); font-size: 1.1rem; text-decoration: none; font-weight: 600;">LinkedIn</a>
+          <a href="#" style="color: var(--primary-coral); font-size: 1.1rem; text-decoration: none; font-weight: 600;">Telegram</a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="section-navigation">
+        <a href="praktika.html" class="nav-btn nav-prev">← Предыдущий раздел: Практика</a>
+        <a href="index.html" class="nav-btn nav-next">Вернуться на главную →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 ЭтикетPro - Учебник делового этикета Казахстана</p>
+    </div>
+  </footer>
+
+  <script src="/src/main.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

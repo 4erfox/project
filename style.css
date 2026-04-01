@@ -132,22 +132,23 @@ body {
 
 /* NAVBAR */
 .navbar {
-  position: absolute;
-  top: 100vh;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: var(--primary-coral);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+  backdrop-filter: blur(8px);
   padding: 1.5rem 0;
   transition: var(--transition);
   width: 100%;
 }
 
-.navbar.sticky {
-  position: fixed;
-  top: 0;
+.navbar.scrolled {
+  background-color: var(--primary-coral);
   box-shadow: var(--shadow);
-  animation: slideDown 0.4s ease;
+  padding: 1rem 0;
+  backdrop-filter: none;
 }
 
 @keyframes slideDown {
@@ -466,22 +467,444 @@ section h2 {
   justify-content: center;
 }
 
-/* CONTACT */
-.contact-section {
-  background-color: var(--text-dark);
-  color: var(--text-white);
+/* MAIN CONTENT SECTION */
+.main-content-section {
+  background-color: var(--bg-light);
+  padding: 5rem 2rem;
+}
+
+.intro-block {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.intro-block h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.intro-block p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.chapter-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  border-left: 4px solid var(--primary-coral);
+}
+
+.chapter-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(231, 76, 60, 0.15);
+  border-left-width: 6px;
+}
+
+.chapter-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-coral) 0%, var(--primary-dark) 100%);
+  color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.chapter-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.chapter-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.chapter-arrow {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  color: var(--primary-coral);
+  transition: var(--transition);
+}
+
+.chapter-card:hover .chapter-arrow {
+  transform: translateX(5px);
+}
+
+.cta-block {
+  background: linear-gradient(135deg, var(--primary-coral) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.25);
+}
+
+.cta-block h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.cta-block p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+.cta-block .btn {
+  background: white;
+  color: var(--primary-coral);
+  border-color: white;
+}
+
+.cta-block .btn:hover {
+  background: var(--bg-light);
+  border-color: var(--bg-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* EDUCATIONAL SECTION */
+.educational-section {
+  background: white;
+  padding: 5rem 2rem;
+}
+
+.educational-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
   text-align: center;
 }
 
-.contact-section h2 {
+.section-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: center;
+  font-style: italic;
+}
+
+.lecture-blocks {
+  display: grid;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.lecture-block {
+  background: var(--bg-light);
+  padding: 3rem;
+  border-radius: 1rem;
+  border-left: 6px solid var(--primary-coral);
+  transition: var(--transition);
+}
+
+.lecture-block:hover {
+  box-shadow: 0 8px 24px rgba(231, 76, 60, 0.12);
+  transform: translateX(5px);
+}
+
+.lecture-block h3 {
+  font-size: 1.75rem;
+  color: var(--primary-coral);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.lecture-block h4 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.lecture-block h4:first-of-type {
+  margin-top: 0;
+}
+
+.lecture-block p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.lecture-block ul {
+  list-style: none;
+  margin: 1rem 0 1rem 0;
+  padding-left: 0;
+}
+
+.lecture-block li {
+  color: #555;
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.lecture-block li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-coral);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.lecture-highlight {
+  background: rgba(231, 76, 60, 0.08);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--primary-coral);
+}
+
+.lecture-highlight p {
+  margin: 0;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.lecture-example {
+  background: white;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+  font-style: italic;
+  color: #666;
+}
+
+.lecture-example strong {
+  color: var(--primary-coral);
+  font-style: normal;
+}
+
+.conclusion-block {
+  background: linear-gradient(135deg, var(--primary-coral) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(231, 76, 60, 0.25);
+  margin-top: 4rem;
+}
+
+.conclusion-block h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.conclusion-block p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.conclusion-block .btn {
+  margin: 0 0.75rem;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  position: relative;
+  background: #000 url('/image%20copy%20copy%20copy%20copy%20copy.png') center/cover no-repeat;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 5rem 2rem;
+  backdrop-filter: blur(2px);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-info-block {
   color: var(--text-white);
 }
 
-.contact-section p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+.contact-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  color: var(--text-white);
+  text-align: left;
 }
+
+.text-red {
+  color: var(--primary-coral);
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-white);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.contact-form-block {
+  background: transparent;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--text-white);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #999;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.contact-submit-btn {
+  padding: 1rem 2.5rem;
+  background: var(--primary-coral);
+  color: var(--text-white);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.contact-submit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+}
+
+.contact-bottom {
+  background: rgba(0, 0, 0, 0.95);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--primary-coral);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-coral);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: var(--primary-coral);
+  color: var(--text-white);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.copyright-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 
 /* ANIMATIONS */
 @keyframes fadeInUp {
@@ -526,6 +949,10 @@ section h2 {
     max-height: 500px;
   }
 
+  .navbar.scrolled .navbar-menu {
+    background-color: var(--primary-dark);
+  }
+
   .nav-link {
     padding: 1rem 2rem;
     width: 100%;
@@ -561,6 +988,131 @@ section h2 {
   .hero-buttons .btn {
     width: 100%;
   }
+
+  .main-content-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .intro-block h2 {
+    font-size: 2rem;
+  }
+
+  .intro-block p {
+    font-size: 1rem;
+  }
+
+  .chapters-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .chapter-card {
+    padding: 1.5rem;
+  }
+
+  .chapter-arrow {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .cta-block {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-block h3 {
+    font-size: 1.75rem;
+  }
+
+  .cta-block p {
+    font-size: 1rem;
+  }
+
+  .educational-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .educational-section h2 {
+    font-size: 2rem;
+  }
+
+  .section-intro {
+    font-size: 1rem;
+  }
+
+  .lecture-block {
+    padding: 2rem;
+  }
+
+  .lecture-block h3 {
+    font-size: 1.5rem;
+  }
+
+  .lecture-highlight {
+    padding: 1rem;
+  }
+
+  .conclusion-block {
+    padding: 2rem 1.5rem;
+  }
+
+  .conclusion-block h3 {
+    font-size: 1.5rem;
+  }
+
+  .conclusion-block p {
+    font-size: 1rem;
+  }
+
+  .conclusion-block .btn {
+    display: block;
+    margin: 0.75rem 0;
+  }
+
+  .contact-overlay {
+    padding: 3rem 1.5rem;
+    min-height: auto;
+  }
+
+  .contact-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-info-list {
+    gap: 1.25rem;
+  }
+
+  .contact-info-item {
+    font-size: 1rem;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .contact-bottom {
+    padding: 2rem 1.5rem;
+  }
+
+  .social-icons {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .copyright-text {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -590,5 +1142,72 @@ section h2 {
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
+  }
+
+  .intro-block h2 {
+    font-size: 1.75rem;
+  }
+
+  .intro-block p {
+    font-size: 0.95rem;
+  }
+
+  .chapter-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .chapter-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .cta-block h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-block p {
+    font-size: 0.95rem;
+  }
+
+  .contact-overlay {
+    padding: 2rem 1rem;
+  }
+
+  .contact-heading {
+    font-size: 1.75rem;
+  }
+
+  .contact-info-item {
+    font-size: 0.9rem;
+  }
+
+  .contact-icon {
+    font-size: 1.25rem;
+    width: 35px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-submit-btn {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-bottom {
+    padding: 1.5rem 1rem;
+  }
+
+  .social-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .copyright-text {
+    font-size: 0.8rem;
   }
 }

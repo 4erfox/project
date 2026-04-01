@@ -8,23 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initializeNavbar() {
   const navbar = document.getElementById('navbar');
-  const heroSection = document.getElementById('hero');
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        navbar.classList.add('sticky');
-      } else {
-        navbar.classList.remove('sticky');
-      }
-    },
-    {
-      threshold: 0,
-      rootMargin: '0px 0px -1px 0px'
+  if (!navbar) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-  );
-
-  observer.observe(heroSection);
+  });
 }
 
 function initializeHamburger() {
